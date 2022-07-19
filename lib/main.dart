@@ -133,20 +133,32 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final isLandscape = mediaQuery.orientation == Orientation.landscape;
-    final appBar = Platform.isIOS
-        ? CupertinoNavigationBar(
-            middle: Text('Personal Expenses'),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                GestureDetector(
-                  child: Icon(CupertinoIcons.add),
-                  onTap: () => _startAddNewTransaction(context),
-                )
-              ],
-            ),
-          )
-        : AppBar(
+    // final appBar = Platform.isIOS
+    //     ? CupertinoNavigationBar(
+    //         middle: Text('Personal Expenses'),
+    //         trailing: Row(
+    //           mainAxisSize: MainAxisSize.min,
+    //           children: <Widget>[
+    //             GestureDetector(
+    //               child: Icon(CupertinoIcons.add),
+    //               onTap: () => _startAddNewTransaction(context),
+    //             )
+    //           ],
+    //         ),
+    //       )
+    //     : AppBar(
+    //         title: Text(
+    //           'Expense Manager',
+    //         ),
+    //         actions: <Widget>[
+    //           IconButton(
+    //             icon: Icon(Icons.add),
+    //             onPressed: () => _startAddNewTransaction(context),
+    //           )
+    //         ],
+    //       );
+
+        final appBar = AppBar(
             title: Text(
               'Expense Manager',
             ),
@@ -161,7 +173,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
     final txListWidget = Container(
       child: TransactionList(_userTransactions, _deleteTransaction),
       height: (mediaQuery.size.height -
-              appBar.preferredSize.height -
+              
               mediaQuery.padding.top) *
           0.7,
     );
@@ -190,7 +202,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
               Container(
                 child: Chart(_recentTransactions),
                 height: (mediaQuery.size.height -
-                        appBar.preferredSize.height -
+                        
                         mediaQuery.padding.top) *
                     0.3,
               ),
@@ -200,7 +212,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
                   ? Container(
                       child: Chart(_recentTransactions),
                       height: (mediaQuery.size.height -
-                              appBar.preferredSize.height -
+                              
                               mediaQuery.padding.top) *
                           0.7,
                     )
@@ -209,12 +221,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
         ),
       ),
     );
-    return Platform.isIOS
-        ? CupertinoPageScaffold(
-            child: pageBody,
-            navigationBar: appBar,
-          )
-        : Scaffold(
+        return Scaffold(
             appBar: appBar,
             body: pageBody,
             floatingActionButtonLocation:
@@ -226,5 +233,22 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
                     onPressed: () => _startAddNewTransaction(context),
                   ),
           );
+    // return Platform.isIOS
+    //     ? CupertinoPageScaffold(
+    //         child: pageBody,
+    //         navigationBar: appBar,
+    //       )
+    //     : Scaffold(
+    //         appBar: appBar,
+    //         body: pageBody,
+    //         floatingActionButtonLocation:
+    //             FloatingActionButtonLocation.centerFloat,
+    //         floatingActionButton: Platform.isIOS
+    //             ? Container()
+    //             : FloatingActionButton(
+    //                 child: Icon(Icons.add),
+    //                 onPressed: () => _startAddNewTransaction(context),
+    //               ),
+    //       );
   }
 }
