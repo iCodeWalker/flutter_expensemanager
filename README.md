@@ -1,16 +1,22 @@
 # expensemanager
 
-A new Flutter project.
+An Application can keeps a track of all your expenses.
 
-## Getting Started
+# Home Screen
 
-This project is a starting point for a Flutter application.
+<div>
+<img src="https://user-images.githubusercontent.com/44644134/230026688-2d02d2d2-d58f-4a9e-a3c4-15508aae0444.jpeg" width="300" height="500">
+<div>
 
-A few resources to get you started if this is your first Flutter project:
+# Add Expense screen
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<div>
+<img src="https://user-images.githubusercontent.com/44644134/230026724-72148b09-0f75-4f3d-9a8b-2b61646fbea7.jpeg" width="300" height="500">
+<div>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Home Screen with expense
+
+<div>
+<img src="https://user-images.githubusercontent.com/44644134/230026736-2cb057a4-d4f6-435b-8816-5bff803c8e4b.jpeg" width="300" height="500">
+<div>
+
